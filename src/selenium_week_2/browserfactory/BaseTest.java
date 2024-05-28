@@ -1,4 +1,4 @@
-package selenium_week_2.project_1_browserfactory;
+package selenium_week_2.browserfactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

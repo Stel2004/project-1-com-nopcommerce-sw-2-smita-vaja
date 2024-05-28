@@ -1,4 +1,4 @@
-package selenium_week_2.project_1_browserfactory.testsuite;
+package selenium_week_2.testsuite;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import selenium_week_2.project_1_browserfactory.BaseTest;
+import selenium_week_2.browserfactory.BaseTest;
 
 /**
  * 3. Write down the following test into ‘LoginTest’ class
@@ -49,15 +49,16 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void userShouldLoginSuccessfullyWithValidCredentials(){
+    public void userShouldLoginSuccessfullyWithValidCredentials() {
         // Find the user should log in successfully with valid credentials
         driver.findElement(By.linkText("Log in")).click();
         driver.findElement(By.id("Email")).sendKeys("smitavaja.uk@gmail.com");
         driver.findElement(By.id("Password")).sendKeys("smita@123");
-        driver.findElement(By.xpath("//*[@id=\"main\"]/div/div/div/div[2]/div[1]/div[2]/form/div[3]/button")).click();
-        String expectedResult = "Log out";
-        String actualResult =driver.findElement(By.xpath("//a[text() = 'Log out']")).getText();
-        Assert.assertEquals("User is not entered valid credentials", expectedResult, actualResult);
+        driver.findElement(By.xpath("//button[text() = 'Log in']")).click();   // Find the Login button element and click
+        String expectedLoginText = "Log out"; //expected Result
+        WebElement logoutText = driver.findElement(By.linkText("Log out"));
+        String actualLoginText = logoutText.getText(); //Actual Result
+        Assert.assertEquals("Login user is not valid", expectedLoginText, actualLoginText); //Compare both Resul
     }
 
     @Test

@@ -1,4 +1,4 @@
-package selenium_week_2.project_1_browserfactory.testsuite;
+package selenium_week_2.testsuite;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import selenium_week_2.project_1_browserfactory.BaseTest;
+import selenium_week_2.browserfactory.BaseTest;
 
 /**
  * 4. Write down the following test into ‘TopMenuTest’
